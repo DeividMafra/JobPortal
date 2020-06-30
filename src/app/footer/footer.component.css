@@ -1,0 +1,50 @@
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #ff0000;
+  background-color: rgba(0, 0, 0, 0.03);
+  transition-duration: .5s;
+}
+
+.material-icons {
+  font-size: 15px !important;
+}
+
+.footer-area {
+  color: white;
+  background-color: #020f31;
+}
+
+.fa-08 {
+  font-size: .8em;
+}
+
+.red-icon {
+  color: #ff0000;
+}
+
+.footer-area .footer-widget h3::before {
+  position: absolute;
+  content: '';
+  background: #ffffff;
+  height: 2px;
+  width: 50px;
+  left: 15px;
+  bottom: 190px;
+}
+
+.rotate-img {
+  transform: rotate(45deg);
+  opacity: 0.3;
+  width: 9em;
+  height: 9em;
+  position: absolute;
+  top: 50px;
+}
