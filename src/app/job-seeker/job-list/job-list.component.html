@@ -1,1 +1,50 @@
-<p>job-list works!</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="col-8 mx-auto">
+
+      <div class="col-8 mx-auto py-5">
+        <h2 class="text-center">Jobs You May Be Interested In</h2>
+
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore
+          et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
+
+      </div>
+
+      <div class="card col-10 mx-auto mb-4" *ngFor="let post of posts">
+        <div class="row py-3">
+
+          <div class="col-2 my-auto">
+            <div class="company-avatar mx-auto">
+              <img src="{{post.logoPath}}" class="company-logo pb-1" />
+            </div>
+          </div>
+
+          <div class="col-8 py-4">
+            <ul class="my-auto">
+              <li>
+                <h5>{{post.title}}</h5>
+              </li>
+              <li class="pb-3" style="color: #969696">
+                <i class="fa fa-map-marker fa-08 mr-2" aria-hidden="true"></i>
+                <span class="mr-5">{{post.address}}</span>
+                <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>
+                <span>{{post.postDays}} days ago</span>
+              </li>
+              <li>
+                <span class="special-border px-2 py-1 mr-2" *ngFor="let type of post.type">{{type}}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-2 my-auto">
+            <a routerLink="/{{post.id}}/details" class="btn btn-sm btn-red">Job Details</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
