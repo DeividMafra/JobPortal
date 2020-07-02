@@ -1,0 +1,23 @@
+.search-engine::before {
+  position: absolute;
+  content: '';
+  background: rgba(147, 175, 249, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+.search-engine {
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  overflow: hidden;
+}
+
+.img-background {
+  background-image: url(../../../../assets/Find_Jobs.jpg);
+}
