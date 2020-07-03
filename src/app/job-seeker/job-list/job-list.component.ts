@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JobSearchDTO } from 'src/app/models/jobSearchDTO';
 
 interface JobPost {
   id: number;
@@ -8,6 +9,7 @@ interface JobPost {
   postDays: number;
   logoPath: string;
 }
+
 @Component({
   selector: 'app-job-list',
   templateUrl: './job-list.component.html',
@@ -154,5 +156,12 @@ export class JobListComponent implements OnInit {
   onChangePage(pageOfItems: Array<JobPost>) {
     this.pageOfItems = pageOfItems;
   }
+
+  getJobFiltered(searchArray: JobSearchDTO) {
+
+    console.log(searchArray);
+    //TO-DO the filter accordingly with the JSON
+  }
+
 
 }

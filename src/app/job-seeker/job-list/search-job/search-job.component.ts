@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { JobSearchDTO } from './../../../models/jobSearchDTO';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 interface Category {
@@ -12,6 +13,8 @@ interface Category {
   styleUrls: ['./search-job.component.css']
 })
 export class SearchJobComponent implements OnInit {
+
+  @Output() newSearch: EventEmitter<JobSearchDTO> = new EventEmitter();
 
   public categories: Category[];
 
@@ -54,8 +57,12 @@ export class SearchJobComponent implements OnInit {
         description: "IT Manager",
       },
     ]
-
     console.log('this.categories ', this.categories)
+  }
+
+  search() {
+    this.newSearch.emit(this.searchForm.value);
+    console.log("Search string>>>", this.searchForm.value);
   }
 
 }
