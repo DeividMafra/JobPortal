@@ -1,0 +1,11 @@
+.navbar-dark .navbar-nav .nav-link:active,
+.navbar-dark .navbar-nav .nav-link:focus,
+a.nav-link:hover {
+  color: #ff0000 !important;
+  background-color: rgba(0, 0, 0, 0.03);
+  transition-duration: .5s;
+}
+
+.bg-dark-x {
+  background-color: #020202 !important;
+}
