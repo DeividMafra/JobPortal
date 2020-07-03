@@ -16,6 +16,7 @@ interface JobPost {
 export class JobListComponent implements OnInit {
 
   public posts: JobPost[];
+  public pageOfItems: Array<JobPost>;
 
   constructor() { }
 
@@ -82,6 +83,14 @@ export class JobListComponent implements OnInit {
         logoPath: "../../../assets/logo2.jpg"
       },
       {
+        id: 71,
+        title: "Web Developer & Software Developer",
+        type: ["Full time"],
+        address: "Garden Road, UK",
+        postDays: 5,
+        logoPath: "../../../assets/logo2.jpg"
+      },
+      {
         id: 8,
         title: "Application Developer & Web Designer",
         type: ["Part time"],
@@ -98,7 +107,39 @@ export class JobListComponent implements OnInit {
         logoPath: "../../../assets/logo4.jpg"
       },
       {
+        id: 91,
+        title: "IT Department & Manager",
+        type: ["Full time", "Contract", "Freelancer"],
+        address: "Drive Post NY 676",
+        postDays: 1,
+        logoPath: "../../../assets/logo4.jpg"
+      },
+      {
         id: 10,
+        title: "Office Assistant",
+        type: ["Intern"],
+        address: "Wellesley Road, London",
+        postDays: 10,
+        logoPath: "../../../assets/logo5.jpg"
+      },
+      {
+        id: 11,
+        title: "Office Assistant",
+        type: ["Intern"],
+        address: "Wellesley Road, London",
+        postDays: 10,
+        logoPath: "../../../assets/logo5.jpg"
+      },
+      {
+        id: 12,
+        title: "Office Assistant",
+        type: ["Intern"],
+        address: "Wellesley Road, London",
+        postDays: 10,
+        logoPath: "../../../assets/logo5.jpg"
+      },
+      {
+        id: 13,
         title: "Office Assistant",
         type: ["Intern"],
         address: "Wellesley Road, London",
@@ -108,6 +149,10 @@ export class JobListComponent implements OnInit {
     ]
 
     console.log('this.posts', this.posts)
+  }
+
+  onChangePage(pageOfItems: Array<JobPost>) {
+    this.pageOfItems = pageOfItems;
   }
 
 }
