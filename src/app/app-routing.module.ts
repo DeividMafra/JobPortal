@@ -5,6 +5,7 @@ import { JobDetailsComponent } from './job-seeker/job-details/job-details.compon
 import { PostJobComponent } from './recruiter/post-job/post-job.component';
 import { JobApplyComponent } from './job-seeker/job-apply/job-apply.component';
 import { AppliedSuccessfullyComponent } from './messages/applied-successfully/applied-successfully.component';
+import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/post-job-successfully.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'applied-successfully',
     component: AppliedSuccessfullyComponent
+  },
+  {
+    path: 'post-job-successfully',
+    component: PostJobSuccessfullyComponent
   },
 ];
 
