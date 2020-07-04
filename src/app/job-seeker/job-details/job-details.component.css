@@ -1,0 +1,71 @@
+.keyword-height {
+  height: 300px;
+}
+
+li {
+  list-style: none;
+}
+
+.company-avatar {
+  background: #ddd;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.company-logo {
+  width: 75%;
+}
+
+h5,
+.header {
+  color: #001935;
+  font-weight: bold;
+}
+
+.apply-before {
+  color: #fd1616;
+}
+
+.company-logo {
+  width: 100%;
+}
+
+section {
+  line-height: 1.6;
+  color: #707070;
+}
+
+section i {
+  font-size: smaller;
+}
+
+.btn-red {
+  color: white;
+  background-color: #ff0000;
+}
+
+.btn-red:hover {
+  color: white;
+  background-color: #001935;
+}
+
+.keyword-card {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border: none;
+  text-align: center;
+}
+
+.special-border {
+  color: #707070;
+  background-color: #ffffff;
+  border: 1px dashed #ddd;
+}
+
+.li-keywords {
+  display: inline-block;
+  margin-bottom: 5px;
+  list-style: none;
+}
