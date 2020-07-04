@@ -21,7 +21,8 @@ import { SearchJobComponent } from './job-seeker/job-list/search-job/search-job.
 import { PostJobComponent } from './recruiter/post-job/post-job.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { MessagesComponent } from './messages/messages.component';
+import { AppliedSuccessfullyComponent } from './messages/applied-successfully/applied-successfully.component';
+import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/post-job-successfully.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MessagesComponent } from './messages/messages.component';
     PostJobComponent,
     NavbarComponent,
     FooterComponent,
-    MessagesComponent
+    AppliedSuccessfullyComponent,
+    PostJobSuccessfullyComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,6 @@ import { MessagesComponent } from './messages/messages.component';
     MatFormFieldModule,
     MatOptionModule,
     MatInputModule,
-    // PaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

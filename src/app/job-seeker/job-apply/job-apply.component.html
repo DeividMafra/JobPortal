@@ -1,1 +1,48 @@
-<p>job-apply works!</p>
+<div class="main-content">
+  <div class="container-fluid">
+
+    <form [formGroup]="jobApplyForm">
+      <div class="card col-6 mx-auto" style="margin-bottom: 7rem; margin-top: 7rem;">
+        <div class="row mt-5 mb-3 mx-3">
+          <div class="col-lg-6">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Full Name" formControlName="fullName">
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Email: e.g. hello@myemail.com" formControlName="email">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row mt-4 mx-3">
+          <div class="col-lg-6">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Desired Salary - e.g. $20,000" formControlName="salary">
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 d-flex justify-content-center">
+
+            <span class="btn btn-file btn-red col-6">
+              <input type="file" name="UploadBtn" (change)="uploadResume($event)" />
+              Upload Your Resume
+            </span>
+          </div>
+
+        </div>
+
+        <div class="row mt-3 mb-5">
+          <div class="col-lg-2 mx-auto">
+            <button (click)="apply()" class="btn btn-red">
+              <span class="text-center">Apply Now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
