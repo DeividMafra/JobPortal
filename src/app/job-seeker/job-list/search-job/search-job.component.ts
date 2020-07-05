@@ -1,11 +1,7 @@
 import { JobSearchDTO } from './../../../models/jobSearchDTO';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
-interface Category {
-  id: number,
-  description: string
-}
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-search-job',
