@@ -1,4 +1,4 @@
-.container-fluid::before {
+.message-background::before {
   position: absolute;
   content: '';
   background-image: url(../../../assets/job.png);
@@ -9,6 +9,13 @@
   top: 0;
   left: 0;
   opacity: .02;
+}
+
+.message-background {
+  background: #fdf8f7;
+  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 .banner-top {
