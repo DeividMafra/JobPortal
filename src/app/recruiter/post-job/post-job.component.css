@@ -1,0 +1,30 @@
+h2 {
+  color: #001935;
+  font-weight: bold;
+}
+
+.special-padding {
+  padding-right: 45px;
+  padding-left: 45px;
+}
+
+.btn-red {
+  color: white !important;
+  background-color: #ff0000;
+  font-weight: 600;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding: 10px 20px 10px;
+}
+
+.btn-red:hover {
+  color: white;
+  background-color: #001935;
+}
+
+.card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}

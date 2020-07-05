@@ -38,3 +38,8 @@
   opacity: 0;
   direction: ltr;
 }
+
+h2 {
+  color: #001935;
+  font-weight: bold;
+}

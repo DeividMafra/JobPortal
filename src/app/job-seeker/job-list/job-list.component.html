@@ -46,7 +46,8 @@
       </div>
 
       <div class="d-flex col-12 justify-content-center">
-        <jw-pagination [items]="posts" [pageSize]=5 [maxPages]="999" (changePage)="onChangePage($event)">
+        <jw-pagination [items]="posts" [pageSize]=5 [maxPages]="999" (changePage)="onChangePage($event)"
+          style="cursor: pointer;">
         </jw-pagination>
       </div>
     </div>
