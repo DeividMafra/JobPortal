@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-apply',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobApplyComponent implements OnInit {
 
-  constructor() { }
+  jobApplyForm = new FormGroup({
+    fullName: new FormControl(''),
+    email: new FormControl(''),
+    salary: new FormControl('')
+  });
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  apply = () => {
+    if (!this.jobApplyForm.valid) {
+      return console.log('error');
+    }
+
+    this.router.navigate(['/applied-successfully']);
+
+  }
+
+  uploadResume = (event) => {
+    console.log('event', event)
   }
 
 }

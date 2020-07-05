@@ -1,0 +1,55 @@
+.message-background::before {
+  position: absolute;
+  content: '';
+  background-image: url(../../../assets/job.png);
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: .02;
+}
+
+.message-background {
+  background: #fdf8f7;
+  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.banner-top {
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  overflow: hidden;
+  height: 18em;
+}
+
+.img-background {
+  background-image: url(../../../assets/Find_Jobs.jpg);
+}
+
+.banner-top::before {
+  position: absolute;
+  content: '';
+  background: rgba(147, 175, 249, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+h3,
+.header {
+  color: #001935;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+p {
+  color: #707070;
+}

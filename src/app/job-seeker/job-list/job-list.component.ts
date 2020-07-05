@@ -23,10 +23,10 @@ export class JobListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.fakeData();
+    this.fakePosts();
   }
 
-  fakeData = () => {
+  fakePosts = () => {
     this.posts = [
       {
         id: 1,

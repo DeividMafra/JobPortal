@@ -1,1 +1,93 @@
-<p>job-details works!</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row justify-content-center py-5">
+      <div class="col-5 mr-4">
+
+
+        <div class="row py-3">
+
+          <div class="col-2 my-auto">
+            <div class="company-avatar mx-auto">
+              <img src="../../../assets/logo1.jpg" class="company-logo pb-1" />
+            </div>
+          </div>
+
+          <div class="col-8 py-4">
+            <ul class="my-auto">
+              <li>
+                <h5>Web Designer, Graphic Designer, UI/UX Designer</h5>
+              </li>
+              <li class="pb-3" style="color: #707070">
+                <i class="fa fa-map-marker fa-08 mr-2" aria-hidden="true"></i>
+                <span class="mr-3">Wellesley Rd, London</span>
+                <i class="fa fa-filter mr-2" aria-hidden="true"></i>
+                <span class="mr-3">Accountancy</span>
+                <i class="fa fa-briefcase mr-2" aria-hidden="true"></i>
+                <span class="mr-3">Freelance</span>
+              </li>
+              <li>
+                <i class="fa fa-paper-plane-o mr-2 apply-before" aria-hidden="true"></i>
+                <span class="apply-before font-weight-bold">Apply Before:
+                  {{ jobDetails[0].applyBefore | date}}</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <h5>Description</h5>
+        <section class="description mb-4">
+          {{jobDetails[0].description}}
+        </section>
+
+        <h5>Requirements</h5>
+        <section class="requirements mb-4">
+          {{jobDetails[0].requirements}}
+          <section class="skill-list mt-3">
+            <li *ngFor="let skill of jobDetails[0].skillsList">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              {{skill}}
+            </li>
+          </section>
+
+        </section>
+        <h5>Job Details</h5>
+
+        <table class="table table-borderless col-5">
+          <tbody>
+            <tr>
+              <td><span class="header">Company</span></td>
+              <td>{{jobDetails[0].jobDetails.company}}</td>
+            </tr>
+            <tr>
+              <td><span class="header">Location</span></td>
+              <td>{{jobDetails[0].jobDetails.location}}</td>
+            </tr>
+            <tr>
+              <td><span class="header">Job Type</span></td>
+              <td><span class="mr-2" *ngFor="let type of jobDetails[0].jobDetails.jobType">{{type}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="header">Email</span></td>
+              <td><a href="mailto:{{jobDetails[0].jobDetails.email}}">{{jobDetails[0].jobDetails.email}}</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="col-2 my-auto px-0">
+          <a routerLink="/{{jobDetails[0].id}}/job-apply" class="btn btn-red">Apply</a>
+        </div>
+
+      </div>
+
+      <div class="card keyword-card col-2 keyword-height">
+        <h5 class="my-5">Keywords</h5>
+        <ul class="text-left">
+          <li class="li-keywords special-border px-2 py-1 mr-2" *ngFor="let keyword of jobDetails[0].keywords">
+            {{keyword}}</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
