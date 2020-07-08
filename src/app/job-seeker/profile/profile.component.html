@@ -1,0 +1,337 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="col-8 mx-auto my-5">
+      <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+
+        <mat-step [stepControl]="personalInfoForm">
+          <form [formGroup]="personalInfoForm">
+            <ng-template matStepLabel>Personal Information</ng-template>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="First name" formControlName="firstName" required>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Last name" formControlName="lastName" required>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="E-mail" formControlName="email" required>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Phone" formControlName="phone" required>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="jobPreferencesForm" [optional]=true>
+          <form [formGroup]="jobPreferencesForm">
+            <ng-template matStepLabel>Job Preferences</ng-template>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Desired job title" formControlName="desiredJobTitle">
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <mat-select placeholder="Desired job types" multiple formControlName="desiredJobTypes">
+                    <mat-option *ngFor="let type of jobTypes" [value]="type.id">
+                      {{type.description}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Desired Salary" formControlName="desiredSalary">
+                </mat-form-field>
+              </div>
+
+              <div class="col-6 pt-4">
+                <mat-checkbox formControlName="isRelocation">I am willing to relocate</mat-checkbox>
+              </div>
+            </div>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="uploadResumeForm" [optional]=true>
+          <form [formGroup]="uploadResumeForm">
+            <ng-template matStepLabel>Upload Resume</ng-template>
+
+            <div class="row justify-content-center mt-5">
+              <span class="btn btn-file btn-red col-3">
+                <input type="file" name="UploadBtn" (change)="uploadResume($event)" formControlName="uploadResume" />
+                Upload Your Resume
+              </span>
+            </div>
+
+            <p class="mt-5 mx-3">Your resume will be visible to anyone, in accordance with our terms. Employers who are
+              interested in your resume may contact you via our system. Your phone number and email address are only
+              provided to employers you apply or respond to.</p>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="educationForm" [optional]=true>
+          <form [formGroup]="educationForm">
+            <ng-template matStepLabel>Education info</ng-template>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Degree" formControlName="degree" required>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="School" formControlName="school">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Field of study" formControlName="fieldOfStudy">
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Grade" formControlName="grade">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Country" formControlName="country">
+                </mat-form-field>
+              </div>
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="City" formControlName="city">
+                </mat-form-field>
+
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="educationFrom" placeholder="From" formControlName="educationFrom"
+                    readonly="readonly">
+                  <mat-datepicker-toggle matSuffix [for]="educationFrom"></mat-datepicker-toggle>
+                  <mat-datepicker #educationFrom></mat-datepicker>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="educationTo" placeholder="To" formControlName="educationTo"
+                    readonly="readonly">
+                  <mat-datepicker-toggle matSuffix [for]="educationTo"></mat-datepicker-toggle>
+                  <mat-datepicker #educationTo></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6 pt-4">
+                <mat-checkbox formControlName="isAttending">I am currently attending</mat-checkbox>
+              </div>
+            </div>
+
+            <div class="row mx-3 mt-5 justify-content-end">
+              <div class="col-3">
+                <button class="btn btn-red">Save & Add New</button>
+              </div>
+            </div>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="skillsCertificationsLinksForm" [optional]=true>
+          <form [formGroup]="skillsCertificationsLinksForm">
+            <ng-template matStepLabel>Skills, Certificates, and Links</ng-template>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <mat-select placeholder="Type" formControlName="sclType" required>
+                    <mat-option *ngFor="let type of sclTypes" [value]="type.id">
+                      {{type.description}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Description" formControlName="sclDescription">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-3 mt-5 justify-content-end">
+              <div class="col-3">
+                <button class="btn btn-red">Save & Add New</button>
+              </div>
+            </div>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="workExperienceForm" [optional]=true>
+          <form [formGroup]="workExperienceForm">
+            <ng-template matStepLabel>Job Experience</ng-template>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Job title" formControlName="jobTitle" required>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Company" formControlName="jobCompany" required>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="Country" formControlName="country" required>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput placeholder="City" formControlName="city" required>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="workFrom" placeholder="From" formControlName="workFrom"
+                    readonly="readonly">
+                  <mat-datepicker-toggle matSuffix [for]="workFrom"></mat-datepicker-toggle>
+                  <mat-datepicker #workFrom></mat-datepicker>
+                </mat-form-field>
+              </div>
+
+              <div class="col-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="workTo" placeholder="To" formControlName="workTo"
+                    readonly="readonly">
+                  <mat-datepicker-toggle matSuffix [for]="workTo"></mat-datepicker-toggle>
+                  <mat-datepicker #workTo></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-12">
+                <mat-form-field>
+                  <textarea matInput type="text" placeholder="Job Description" formControlName="jobDescription"
+                    style="height: 100px"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row mx-1 mt-5">
+              <div class="col-6 pt-4">
+                <mat-checkbox formControlName="isCurrentJob">It is my current job</mat-checkbox>
+              </div>
+            </div>
+
+            <div class="row mx-3 mt-5 justify-content-end">
+              <div class="col-3">
+                <button class="btn btn-red">Save & Add New</button>
+              </div>
+            </div>
+
+            <div class="row mx-1 my-5 justify-content-between">
+              <div class="col-1">
+                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col-2 float-right">
+                <button mat-button matStepperNext class="btn btn-secondary float-right">Save</button>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+    </div>
+
+  </div>
+</div>
