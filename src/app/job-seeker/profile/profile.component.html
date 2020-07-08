@@ -4,7 +4,7 @@
     <div class="col-8 mx-auto my-5">
       <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
 
-        <mat-step [stepControl]="personalInfoForm" [optional]=true>
+        <mat-step [stepControl]="personalInfoForm">
           <form [formGroup]="personalInfoForm">
             <ng-template matStepLabel>Personal Information</ng-template>
 
@@ -78,7 +78,7 @@
               </div>
 
               <div class="col-6 pt-4">
-                <mat-checkbox formControlName="isRelocation">I am willing to relocate</mat-checkbox>
+                <mat-checkbox formControlName="isRelocation" color="primary">I am willing to relocate</mat-checkbox>
               </div>
             </div>
 
@@ -193,26 +193,55 @@
               </div>
 
               <div class="col-6">
-                <mat-form-field>
-                  <input matInput [matDatepicker]="educationTo" placeholder="To" formControlName="educationTo"
-                    readonly="readonly">
-                  <mat-datepicker-toggle matSuffix [for]="educationTo"></mat-datepicker-toggle>
-                  <mat-datepicker #educationTo></mat-datepicker>
-                </mat-form-field>
+                <ng-container *ngIf="!showToEducation">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="educationTo" placeholder="To" formControlName="educationTo"
+                      readonly="readonly">
+                    <mat-datepicker-toggle matSuffix [for]="educationTo"></mat-datepicker-toggle>
+                    <mat-datepicker #educationTo></mat-datepicker>
+                  </mat-form-field>
+                </ng-container>
               </div>
             </div>
 
             <div class="row mx-1 mt-5">
               <div class="col-6 pt-4">
-                <mat-checkbox formControlName="isAttending">I am currently attending</mat-checkbox>
+                <mat-checkbox (change)="checkStatus()" formControlName="isAttending" color="primary">I am currently
+                  attending
+                </mat-checkbox>
               </div>
             </div>
 
             <div class="row mx-3 mt-5 justify-content-end">
               <div class="col-3">
-                <button class="btn btn-red">Save & Add New</button>
+                <button class="btn btn-red" (click)="addEducation()">Save & Add New</button>
               </div>
             </div>
+
+            <ng-container *ngIf="educationAdded">
+              <div class="row mx-1 my-5">
+                <div class="col-1 my-auto">
+                  <i class="fa fa-graduation-cap fa-2x mr-3" aria-hidden="true"></i>
+                </div>
+                <div class="col-4">
+                  <li>{{degree.degree}}</li>
+                  <li>{{degree.school}}</li>
+                  <li>{{degree.country}} - {{degree.educationTo}} </li>
+                </div>
+                <div class="col-2 my-auto">
+                  <span class="btn btn-outline-info mr-3 ">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                  </span>
+                  <span class="btn btn-outline-danger">
+                    <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </ng-container>
+
+
+
+
 
             <div class="row mx-1 my-5 justify-content-between">
               <div class="col-1">
@@ -327,7 +356,7 @@
 
             <div class="row mx-1 mt-5">
               <div class="col-6 pt-4">
-                <mat-checkbox formControlName="isCurrentJob">It is my current job</mat-checkbox>
+                <mat-checkbox formControlName="isCurrentJob" color="primary">It is my current job</mat-checkbox>
               </div>
             </div>
 

@@ -2,7 +2,7 @@ import { JobType } from 'src/app/models/jobType';
 import { SclInfo } from './../../models/sclInfo';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { saveAs } from 'file-saver';
+// import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-profile',
@@ -12,6 +12,16 @@ import { saveAs } from 'file-saver';
 export class ProfileComponent implements OnInit {
 
   public fileName: string;
+  public degree = {
+    degree: 'Computer Software & Database Development',
+    school: 'Labtom College',
+    country: 'Canada',
+    educationTo: '2020'
+  }
+
+  public resumeUploaded: boolean = false;
+  public educationAdded: boolean = false;
+  public showToEducation: boolean;
 
   public sclTypes: SclInfo[] = [
     {
@@ -55,7 +65,7 @@ export class ProfileComponent implements OnInit {
     },
   ];
 
-  resumeUploaded = false;
+
 
   personalInfoForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -82,7 +92,7 @@ export class ProfileComponent implements OnInit {
     grade: new FormControl(''),
     country: new FormControl(''),
     city: new FormControl(''),
-    isAttending: new FormControl(''),
+    isAttending: new FormControl(false),
     educationFrom: new FormControl(''),
     educationTo: new FormControl('')
   });
@@ -110,6 +120,7 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   uploadResume = (file) => {
@@ -125,6 +136,14 @@ export class ProfileComponent implements OnInit {
 
     console.log('fileName', this.fileName)
 
+  }
+
+  checkStatus = () => {
+    this.showToEducation = this.educationForm.get('isAttending').value;
+  }
+
+  addEducation = () => {
+    this.educationAdded = true;
   }
 
 }
