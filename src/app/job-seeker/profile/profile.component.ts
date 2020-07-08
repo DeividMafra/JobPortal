@@ -2,6 +2,7 @@ import { JobType } from 'src/app/models/jobType';
 import { SclInfo } from './../../models/sclInfo';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,8 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  public fileName: string;
 
   public sclTypes: SclInfo[] = [
     {
@@ -52,7 +55,7 @@ export class ProfileComponent implements OnInit {
     },
   ];
 
-  isOptional = false;
+  resumeUploaded = false;
 
   personalInfoForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -107,10 +110,20 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
-  uploadResume = (event) => {
+  uploadResume = (file) => {
+    // let fileName = new saveAs(file, `resume.pdf`);
+    // console.log('file.target.files[0].name', file.target.files[0].name)
+
+    this.resumeUploaded = true
+
+    let today = new Date();
+    let fileDate = today.toISOString().split('T')[0];
+
+    this.fileName = 'resume' + fileDate;
+
+    console.log('fileName', this.fileName)
 
   }
 
