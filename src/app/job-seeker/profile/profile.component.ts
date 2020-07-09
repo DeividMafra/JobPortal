@@ -12,15 +12,20 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   public fileName: string;
+
   public degree = {
     degree: 'Computer Software & Database Development',
     school: 'Labtom College',
     country: 'Canada',
     educationTo: '2020'
   }
+  public skills = ['NodeJS', 'ReactJS', 'Angular 6+', '.Net Framework'];
+  public certificates = ['SCRUM Master', 'Itil', 'COBIT 5'];
+  public links = ['www.linkedin.com/in/my-name', 'www.myblog.com'];
 
   public resumeUploaded: boolean = false;
   public educationAdded: boolean = false;
+  public skillAdded: boolean = false;
   public showToEducation: boolean;
 
   public sclTypes: SclInfo[] = [
@@ -144,6 +149,10 @@ export class ProfileComponent implements OnInit {
 
   addEducation = () => {
     this.educationAdded = true;
+  }
+
+  addSkill = () => {
+    this.skillAdded = true;
   }
 
 }

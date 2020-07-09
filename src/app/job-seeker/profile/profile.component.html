@@ -4,7 +4,7 @@
     <div class="col-8 mx-auto my-5">
       <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
 
-        <mat-step [stepControl]="personalInfoForm">
+        <mat-step [stepControl]="personalInfoForm" [optional]=true>
           <form [formGroup]="personalInfoForm">
             <ng-template matStepLabel>Personal Information</ng-template>
 
@@ -278,9 +278,74 @@
 
             <div class="row mx-3 mt-5 justify-content-end">
               <div class="col-3">
-                <button class="btn btn-red">Save & Add New</button>
+                <button class="btn btn-red" (click)="addSkill()">Save & Add New</button>
               </div>
             </div>
+
+            <ng-container *ngIf="skillAdded">
+
+              <div class="row mx-1 my-5">
+
+                <div class="col-3 mr-5 float-left">
+                  <h5 class="mt-5 mb-4" style="color: #3f51b5">SKILLS</h5>
+
+                  <div class="row my-3" *ngFor="let skill of skills">
+                    <div class="col-2">
+                      <i class="fa fa-star fa-lg mr-3" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-8">
+                      <span>{{skill}}</span>
+                    </div>
+                    <div class="col-2">
+                      <span class="btn btn-sm btn-outline-danger">
+                        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-4 mr-5">
+                  <h5 class="mt-5 mb-4" style="color: #3f51b5">CERTIFICATES</h5>
+
+                  <div class="row my-3" *ngFor="let cetificate of certificates">
+                    <div class="col-2">
+                      <i class="fa fa-certificate fa-lg mr-3" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-8">
+                      <span>{{cetificate}}</span>
+                    </div>
+                    <div class="col-2">
+                      <span class="btn btn-sm btn-outline-danger">
+                        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-4 float-right">
+                  <h5 class="mt-5 mb-4" style="color: #3f51b5">LINKS</h5>
+
+                  <div class="row my-3" *ngFor="let link of links">
+                    <div class="col-2">
+                      <i class="fa fa-link fa-lg mr-3" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-8">
+                      <span>{{link}}</span>
+                    </div>
+                    <div class="col-2">
+                      <span class="btn btn-sm btn-outline-danger">
+                        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </ng-container>
 
             <div class="row mx-1 my-5 justify-content-between">
               <div class="col-1">
