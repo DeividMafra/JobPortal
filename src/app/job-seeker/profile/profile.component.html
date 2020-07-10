@@ -4,7 +4,7 @@
     <div class="col-8 mx-auto my-5">
       <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
 
-        <mat-step [stepControl]="personalInfoForm" [optional]=true>
+        <mat-step [stepControl]="personalInfoForm">
           <form [formGroup]="personalInfoForm">
             <ng-template matStepLabel>Personal Information</ng-template>
 
@@ -239,10 +239,6 @@
               </div>
             </ng-container>
 
-
-
-
-
             <div class="row mx-1 my-5 justify-content-between">
               <div class="col-1">
                 <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
@@ -401,12 +397,14 @@
               </div>
 
               <div class="col-6">
-                <mat-form-field>
-                  <input matInput [matDatepicker]="workTo" placeholder="To" formControlName="workTo"
-                    readonly="readonly">
-                  <mat-datepicker-toggle matSuffix [for]="workTo"></mat-datepicker-toggle>
-                  <mat-datepicker #workTo></mat-datepicker>
-                </mat-form-field>
+                <ng-container *ngIf="!showToJob">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="workTo" placeholder="To" formControlName="workTo"
+                      readonly="readonly">
+                    <mat-datepicker-toggle matSuffix [for]="workTo"></mat-datepicker-toggle>
+                    <mat-datepicker #workTo></mat-datepicker>
+                  </mat-form-field>
+                </ng-container>
               </div>
             </div>
 
@@ -421,15 +419,40 @@
 
             <div class="row mx-1 mt-5">
               <div class="col-6 pt-4">
-                <mat-checkbox formControlName="isCurrentJob" color="primary">It is my current job</mat-checkbox>
+                <mat-checkbox (change)="checkJobStatus()" formControlName="isCurrentJob" color="primary">It is my
+                  current job</mat-checkbox>
               </div>
             </div>
 
             <div class="row mx-3 mt-5 justify-content-end">
               <div class="col-3">
-                <button class="btn btn-red">Save & Add New</button>
+                <button class="btn btn-red" (click)="addJob()">Save & Add New</button>
               </div>
             </div>
+
+
+            <ng-container *ngIf="jobAdded">
+              <div class="row mx-1 my-5" *ngFor="let job of jobExperience">
+                <div class="col-1 my-auto">
+                  <i class="fa fa-briefcase fa-2x mr-3" aria-hidden="true"></i>
+                </div>
+                <div class="col-4">
+                  <li>{{job.jobTitle}}</li>
+                  <li>{{job.company}}</li>
+                  <li>{{job.country}}</li>
+                  <li>{{job.from}} - {{job.until}}</li>
+                </div>
+                <div class="col-2 my-auto">
+                  <span class="btn btn-outline-info mr-3 ">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                  </span>
+                  <span class="btn btn-outline-danger">
+                    <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </ng-container>
+
 
             <div class="row mx-1 my-5 justify-content-between">
               <div class="col-1">

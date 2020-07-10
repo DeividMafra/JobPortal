@@ -26,7 +26,26 @@ export class ProfileComponent implements OnInit {
   public resumeUploaded: boolean = false;
   public educationAdded: boolean = false;
   public skillAdded: boolean = false;
+  public jobAdded: boolean = false;
   public showToEducation: boolean;
+  public showToJob: boolean;
+
+  public jobExperience = [
+    {
+      jobTitle: 'Front-end Developer',
+      company: "Facebook Inc.",
+      country: "USA",
+      from: '05/2020',
+      until: "Current",
+    },
+    {
+      jobTitle: 'Full-stack Developer',
+      company: "Google Inc.",
+      country: "Canada",
+      from: '08/2019',
+      until: "04/2020",
+    },
+  ];
 
   public sclTypes: SclInfo[] = [
     {
@@ -116,7 +135,7 @@ export class ProfileComponent implements OnInit {
     jobCompany: new FormControl('', Validators.required),
     country: new FormControl(''),
     city: new FormControl(''),
-    isCurrentJob: new FormControl(''),
+    isCurrentJob: new FormControl(false),
     workFrom: new FormControl(''),
     workTo: new FormControl(''),
     jobDescription: new FormControl('')
@@ -147,12 +166,20 @@ export class ProfileComponent implements OnInit {
     this.showToEducation = this.educationForm.get('isAttending').value;
   }
 
+  checkJobStatus = () => {
+    this.showToJob = this.workExperienceForm.get('isCurrentJob').value;
+  }
+
   addEducation = () => {
     this.educationAdded = true;
   }
 
   addSkill = () => {
     this.skillAdded = true;
+  }
+
+  addJob = () => {
+    this.jobAdded = true;
   }
 
 }
