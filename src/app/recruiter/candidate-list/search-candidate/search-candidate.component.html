@@ -1,0 +1,33 @@
+<div class="search-engine img-background">
+  <div class="col-8 mx-auto py-5">
+    <div class="card col-10 mx-auto py-5 my-5 special-radius">
+
+      <form [formGroup]="searchForm">
+        <div class="row px-4">
+          <div class="col-lg-4">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Job Title or Keyword" formControlName="jobTitle">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-4">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Location" formControlName="location">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-4 mx-auto">
+            <button (click)="search()" class="btn btn-red">
+              <span class="text-uppercase text-center">Find a Professional</span>
+              <i class="fa fa-search btn-icon" aria-hidden="true"></i>
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
