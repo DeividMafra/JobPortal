@@ -7,7 +7,6 @@ import { JobApplyComponent } from './job-seeker/job-apply/job-apply.component';
 import { AppliedSuccessfullyComponent } from './messages/applied-successfully/applied-successfully.component';
 import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/post-job-successfully.component';
 import { ProfileComponent } from './job-seeker/profile/profile.component';
-import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
 
 const routes: Routes = [
   {
@@ -37,11 +36,7 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
-  },
-  {
-    path: 'candidate-list',
-    component: CandidateListComponent
-  },
+  }
 ];
 
 @NgModule({

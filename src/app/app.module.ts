@@ -28,9 +28,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AppliedSuccessfullyComponent } from './messages/applied-successfully/applied-successfully.component';
 import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/post-job-successfully.component';
 import { ProfileComponent } from './job-seeker/profile/profile.component';
-import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
-import { SearchCandidateComponent } from './recruiter/candidate-list/search-candidate/search-candidate.component';
-
 
 @NgModule({
   declarations: [
@@ -44,9 +41,7 @@ import { SearchCandidateComponent } from './recruiter/candidate-list/search-cand
     FooterComponent,
     AppliedSuccessfullyComponent,
     PostJobSuccessfullyComponent,
-    ProfileComponent,
-    CandidateListComponent,
-    SearchCandidateComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
