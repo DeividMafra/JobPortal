@@ -54,13 +54,13 @@
             <div class="row mx-1 mt-5">
               <div class="col-6">
                 <mat-form-field>
-                  <input matInput placeholder="Current title" formControlName="currentTitle">
+                  <input matInput placeholder="Current title" formControlName="currentTitle" required>
                 </mat-form-field>
               </div>
 
               <div class="col-6">
                 <mat-form-field>
-                  <input matInput placeholder="Phone number" formControlName="phoneNumber">
+                  <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
                 </mat-form-field>
               </div>
 
@@ -69,7 +69,7 @@
             <div class="row mx-1 mt-5">
               <div class="col-6">
                 <mat-form-field>
-                  <mat-select placeholder="How did you hear about us" multiple formControlName="heardAboutUs">
+                  <mat-select placeholder="How did you hear about us" multiple formControlName="heardAboutUs" required>
                     <mat-option *ngFor="let source of heardAboutUsSrc" [value]="source">
                       {{source}}
                     </mat-option>
