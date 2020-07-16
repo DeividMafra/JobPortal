@@ -11,16 +11,18 @@ import { JobType } from 'src/app/models/jobType';
 })
 export class PostJobComponent implements OnInit {
 
+  public isCaptchaResolved: boolean = false;
+
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+    this.isCaptchaResolved = true;
+}
+
   jobPostForm = new FormGroup({
     jobTitle: new FormControl(''),
     category: new FormControl(''),
-    companyName: new FormControl(''),
-    companyEmail: new FormControl(''),
-    companyWebsite: new FormControl(''),
-    location: new FormControl(''),
     type: new FormControl(''),
     tags: new FormControl(''),
-    salary: new FormControl(''),
     experience: new FormControl(''),
     description: new FormControl(''),
   });
@@ -35,7 +37,7 @@ export class PostJobComponent implements OnInit {
     this.getTypes();
   }
 
-  postJob = () => {
+  onSubmit = () => {
     if (!this.jobPostForm.valid) {
       return console.log('error');
     }

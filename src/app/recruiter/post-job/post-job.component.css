@@ -23,6 +23,10 @@ h2 {
   background-color: #001935;
 }
 
+.btn:disabled{
+  background-color: #495057 !important;
+}
+
 .card {
   border-radius: 1rem;
   border: none;

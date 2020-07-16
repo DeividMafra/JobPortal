@@ -13,7 +13,8 @@ import {
   MatNativeDateModule
 } from '@angular/material';
 
-import { JwPaginationModule } from 'jw-angular-pagination'
+import { JwPaginationModule } from 'jw-angular-pagination';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +62,8 @@ import { SearchCandidateComponent } from './recruiter/candidate-list/search-cand
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    JwPaginationModule
+    JwPaginationModule,
+    RecaptchaModule
   ],
   exports: [
     MatSelectModule,
