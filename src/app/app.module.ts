@@ -6,7 +6,11 @@ import {
   MatSelectModule,
   MatFormFieldModule,
   MatOptionModule,
-  MatInputModule
+  MatInputModule,
+  MatStepperModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { JwPaginationModule } from 'jw-angular-pagination'
@@ -23,6 +27,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppliedSuccessfullyComponent } from './messages/applied-successfully/applied-successfully.component';
 import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/post-job-successfully.component';
+import { ProfileComponent } from './job-seeker/profile/profile.component';
+import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
+import { SearchCandidateComponent } from './recruiter/candidate-list/search-candidate/search-candidate.component';
 
 
 @NgModule({
@@ -36,7 +43,10 @@ import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/p
     NavbarComponent,
     FooterComponent,
     AppliedSuccessfullyComponent,
-    PostJobSuccessfullyComponent
+    PostJobSuccessfullyComponent,
+    ProfileComponent,
+    CandidateListComponent,
+    SearchCandidateComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +57,10 @@ import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/p
     MatFormFieldModule,
     MatOptionModule,
     MatInputModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     JwPaginationModule
   ],
   exports: [
@@ -54,6 +68,10 @@ import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/p
     MatFormFieldModule,
     MatOptionModule,
     MatInputModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

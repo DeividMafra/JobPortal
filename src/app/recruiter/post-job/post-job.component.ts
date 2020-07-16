@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Category } from 'src/app/models/category';
 import { Router } from '@angular/router';
+import { JobType } from 'src/app/models/jobType';
 
 @Component({
   selector: 'app-post-job',
@@ -25,7 +26,7 @@ export class PostJobComponent implements OnInit {
   });
 
   public categories: Category[];
-  public types: Category[];
+  public types: JobType[];
 
   constructor(private router: Router) { }
 
