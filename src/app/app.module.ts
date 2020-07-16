@@ -31,6 +31,7 @@ import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/p
 import { ProfileComponent } from './job-seeker/profile/profile.component';
 import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
 import { SearchCandidateComponent } from './recruiter/candidate-list/search-candidate/search-candidate.component';
+import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SearchCandidateComponent } from './recruiter/candidate-list/search-cand
     PostJobSuccessfullyComponent,
     ProfileComponent,
     CandidateListComponent,
-    SearchCandidateComponent
+    SearchCandidateComponent,
+    CompanyProfileComponent
   ],
   imports: [
     BrowserModule,
