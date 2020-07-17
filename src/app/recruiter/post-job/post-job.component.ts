@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Category } from 'src/app/models/category';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { JobType } from 'src/app/models/jobType';
 
 @Component({
@@ -13,10 +13,12 @@ export class PostJobComponent implements OnInit {
 
   public isCaptchaResolved: boolean = false;
 
+  public isEditPost: boolean = false;
+
   resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response: ${captchaResponse}`);
     this.isCaptchaResolved = true;
-}
+  }
 
   jobPostForm = new FormGroup({
     jobTitle: new FormControl(''),
@@ -30,11 +32,12 @@ export class PostJobComponent implements OnInit {
   public categories: Category[];
   public types: JobType[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCategories();
     this.getTypes();
+    this.getRoute();
   }
 
   onSubmit = () => {
@@ -103,6 +106,18 @@ export class PostJobComponent implements OnInit {
       },
     ]
     console.log('this.types ', this.types)
+  }
+
+  getRoute = () => {
+    let jobId = this.activatedRoute.snapshot.paramMap.get('jobId');
+
+    if (jobId !== null) {
+      this.isEditPost = true
+    }
+
+    console.log(jobId)
+    console.log(this.isEditPost)
+
   }
 
 

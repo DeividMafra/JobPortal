@@ -3,7 +3,10 @@
 
     <form [formGroup]="jobPostForm" (ngSubmit)="onSubmit()">
       <div class="card col-6 mx-auto" style="margin-bottom: 7rem; margin-top: 7rem;">
-        <h2 class="text-center mt-5">Fill Up Your Job Information</h2>
+        <h2 class="text-center mt-5" *ngIf="!isEditPost else editPostTitle">Fill Up Your Job Information</h2>
+        <ng-template #editPostTitle>
+          <h2 class="text-center mt-5">Update Your Job Post</h2>
+        </ng-template>
 
         <div class="row mt-5 mb-3 mx-3">
           <div class="col-lg-6">
@@ -61,16 +64,29 @@
                 style="height: 100px"></textarea>
             </mat-form-field>
 
-            <re-captcha class="" (resolved)="resolved($event)" siteKey="6LdYQrIZAAAAALgOiYQgsEJw0wTYSRU44T1VWlqX"></re-captcha>
+            <re-captcha *ngIf="!isEditPost" class="" (resolved)="resolved($event)"
+              siteKey="6LdYQrIZAAAAALgOiYQgsEJw0wTYSRU44T1VWlqX">
+            </re-captcha>
           </div>
         </div>
 
         <div class="row mt-3 mb-5">
-          <div class="col-lg-2 mx-auto">
+          <div class="col-lg-2 mx-auto" *ngIf="!isEditPost else editPost">
             <button type="submit" class="btn btn-red" [disabled]="!isCaptchaResolved">
               <span class="text-center">Post Job</span>
             </button>
           </div>
+
+          <ng-template #editPost>
+            <div class="col-4 mx-auto">
+              <button type="submit" class="btn btn-outline-secondary mx-5">
+                <span class="text-center">Delete</span>
+              </button>
+              <button type="submit" class="btn btn-danger">
+                <span class="text-center">Update</span>
+              </button>
+            </div>
+          </ng-template>
         </div>
 
       </div>

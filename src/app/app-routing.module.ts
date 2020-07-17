@@ -10,6 +10,7 @@ import { ProfileComponent } from './job-seeker/profile/profile.component';
 import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
 import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
 import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
+import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
 
 const routes: Routes = [
   {
@@ -49,8 +50,16 @@ const routes: Routes = [
     component: CompanyProfileComponent
   },
   {
-    path: ':company/:jobId',
+    path: ':company/jobs',
     component: JobsPostedComponent
+  },
+  {
+    path: ':company/jobs/:jobId',
+    component: EditJobComponent
+  },
+  {
+    path: ':company/jobs/:jobId/candidates',
+    component: PostJobComponent
   },
 ];
 
