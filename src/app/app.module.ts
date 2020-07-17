@@ -10,7 +10,8 @@ import {
   MatStepperModule,
   MatCheckboxModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatButtonToggleModule
 } from '@angular/material';
 
 import { JwPaginationModule } from 'jw-angular-pagination';
@@ -32,6 +33,8 @@ import { ProfileComponent } from './job-seeker/profile/profile.component';
 import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
 import { SearchCandidateComponent } from './recruiter/candidate-list/search-candidate/search-candidate.component';
 import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
+import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
+import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { CompanyProfileComponent } from './recruiter/company-profile/company-pro
     ProfileComponent,
     CandidateListComponent,
     SearchCandidateComponent,
-    CompanyProfileComponent
+    CompanyProfileComponent,
+    JobsPostedComponent,
+    EditJobComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +69,7 @@ import { CompanyProfileComponent } from './recruiter/company-profile/company-pro
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatButtonToggleModule,
     JwPaginationModule,
     RecaptchaModule
   ],
@@ -75,7 +81,8 @@ import { CompanyProfileComponent } from './recruiter/company-profile/company-pro
     MatStepperModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { PostJobSuccessfullyComponent } from './messages/post-job-successfully/p
 import { ProfileComponent } from './job-seeker/profile/profile.component';
 import { CandidateListComponent } from './recruiter/candidate-list/candidate-list.component';
 import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
+import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'company-profile',
     component: CompanyProfileComponent
+  },
+  {
+    path: ':company/:jobId',
+    component: JobsPostedComponent
   },
 ];
 

@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="col-8 mt-5 mx-auto">
+
+      <div class="row col-8 mx-auto mb-4 text-center justify-content-center">
+        <h2>Jobs You Have Posted</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus</p>
+      </div>
+
+      <div class="card col-8 mx-auto mb-4" *ngFor="let jobPost of pageOfItems">
+        <div class="row py-3">
+
+          <div class="col-8 mx-auto py-4">
+
+            <ul class="my-auto">
+              <li>
+                <h5>{{jobPost.jobtitle}}</h5>
+              </li>
+              <li class="pb-3" style="color: #969696">
+                <i class="fa fa-map-marker fa-08 mr-2" aria-hidden="true"></i>
+                <span class="mr-5">{{jobPost.location}}</span>
+                <i class="fa fa-users mr-2" aria-hidden="true"></i>
+                <span>{{jobPost.numberOfCandidate}} Candidates</span>
+              </li>
+              <li>
+
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" (change)="checkJobStatus($event, jobPost.id )" class="custom-control-input"
+                    id="{{jobPost.id}}" [(checked)]="jobPost.isActive">
+                  <label class="custom-control-label"
+                    for="{{jobPost.id}}">{{jobPost.isActive? 'Active' : 'Inactive'}}</label>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-3 my-auto">
+            <a routerLink="#" class="btn btn-sm btn-red mb-2">View Candidates</a>
+            <a routerLink="#" class="btn btn-sm btn-red">Edit Post</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex col-12 justify-content-center">
+      <jw-pagination [items]="posts" [pageSize]=5 [maxPages]="999" (changePage)="onChangePage($event)"
+        style="cursor: pointer;">
+      </jw-pagination>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.job-card{
+  background-color: #fdf3f1;
+}
+
+h3{
+  color: #001935;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.btn-red {
+  color: white !important;
+  background-color: #ff0000;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  width: 75%;
+}
+
+.btn-red:hover {
+  color: white;
+  background-color: #001935;
+}
+
+.special-border {
+  color: #fd1616;
+  background-color: #fddcd4;
+  border: 1px dashed;
+}
+
+.special-border-inactive {
+  color: #969696;
+  background-color: #fddcd4;
+  border: 1px dashed;
+}
