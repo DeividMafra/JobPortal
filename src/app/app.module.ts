@@ -36,7 +36,8 @@ import { CompanyProfileComponent } from './recruiter/company-profile/company-pro
 import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
 import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
 import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
-
+import { SignupComponent } from './authentication/signup/signup.component';
+import { SigninComponent } from './authentication/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import { AccountSettingsComponent } from './recruiter/account-settings/account-s
     CompanyProfileComponent,
     JobsPostedComponent,
     EditJobComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

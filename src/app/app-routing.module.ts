@@ -12,6 +12,8 @@ import { CompanyProfileComponent } from './recruiter/company-profile/company-pro
 import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
 import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
 import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
+import { SigninComponent } from './authentication/signin/signin.component';
+import { SignupComponent } from './authentication/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -65,6 +67,14 @@ const routes: Routes = [
   {
     path: 'account-setting/:companyId',
     component: AccountSettingsComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
 ];
 

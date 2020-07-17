@@ -1,0 +1,32 @@
+.btn-red {
+  color: white !important;
+  background-color: #ff0000;
+  font-weight: 600;
+  width:270px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 10px 20px 10px;
+}
+
+.btn-red:hover {
+  color: white;
+  background-color: #001935;
+}
+
+h2 {
+  color: #001935;
+  font-weight: bold;
+}
+
+.password-card{
+  border: 0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.password-card + .password-card{
+  margin-left: 80px;
+}
+
+a{
+text-decoration: none;
+}
