@@ -1,0 +1,82 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <h2 class="text-center mt-5">Account Settings</h2>
+
+    <div class="row justify-content-center mb-5">
+
+      <div class="row col-8 my-5">
+
+        <div class="card password-card col-4 mx-auto">
+          <form [formGroup]="recruiterInfo" class="my-5">
+
+            <h4 class="col text-center my-4">Personal Information</h4>
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput placeholder="Your Name" formControlName="recruiterName" required>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput placeholder="Current title" formControlName="currentTitle" required>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-5">
+              <button type="submit" class="btn btn-red">
+                <span class="text-center">Update</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="card password-card col-4 mx-auto">
+          <form [formGroup]="changePassword" class="my-5">
+
+
+            <h4 class="col text-center my-4">Change Password</h4>
+
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput type="password" placeholder="Current password" formControlName="currentPassword"
+                  required>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput type="password" placeholder="New password" formControlName="newPassword" required>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field>
+                <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword"
+                  required>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-5">
+              <button type="submit" class="btn btn-red">
+                <span class="text-center">Change Password</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

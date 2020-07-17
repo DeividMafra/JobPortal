@@ -11,6 +11,7 @@ import { CandidateListComponent } from './recruiter/candidate-list/candidate-lis
 import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
 import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
 import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
+import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
 
 const routes: Routes = [
   {
@@ -59,7 +60,11 @@ const routes: Routes = [
   },
   {
     path: ':company/jobs/:jobId/candidates',
-    component: PostJobComponent
+    component: CandidateListComponent //TO-DO review it.
+  },
+  {
+    path: 'account-setting/:companyId',
+    component: AccountSettingsComponent
   },
 ];
 

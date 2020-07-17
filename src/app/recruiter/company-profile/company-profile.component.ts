@@ -16,6 +16,7 @@ export class CompanyProfileComponent implements OnInit {
   });
 
   recruiterInfo = new FormGroup({
+    recruiterName: new FormControl('', Validators.required),
     currentTitle: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     heardAboutUs: new FormControl('', Validators.required),

@@ -35,6 +35,7 @@ import { SearchCandidateComponent } from './recruiter/candidate-list/search-cand
 import { CompanyProfileComponent } from './recruiter/company-profile/company-profile.component';
 import { JobsPostedComponent } from './recruiter/jobs-posted/jobs-posted.component';
 import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.component';
+import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.comp
     SearchCandidateComponent,
     CompanyProfileComponent,
     JobsPostedComponent,
-    EditJobComponent
+    EditJobComponent,
+    AccountSettingsComponent
   ],
   imports: [
     BrowserModule,
