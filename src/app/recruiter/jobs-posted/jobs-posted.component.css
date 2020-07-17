@@ -1,6 +1,11 @@
 .job-card{
   background-color: #fdf3f1;
+  /* box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.07); */
 }
+
+/* .card{
+  border: 0;
+} */
 
 h3{
   color: #001935;
