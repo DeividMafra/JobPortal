@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-x">
   <div class="col-4">
-    <a class="navbar-brand float-right" routerLink="/">
+    <a class="navbar-brand" routerLink="/">
       <img src="../../assets/tdq.png" width="100" height="50" class="d-inline-block align-top" alt="" loading="lazy">
     </a>
   </div>
@@ -8,8 +8,8 @@
     aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="col-4 collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mx-auto">
+  <div class="col-8 collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav" style="margin-right: 20%;">
       <li class="nav-item">
         <a class="nav-link" routerLink="/">Job List</a>
       </li>
@@ -19,17 +19,21 @@
     </ul>
 
 
-    <ul class="navbar-nav" *ngIf="loggedIn else signIn">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="account-setting/1">My Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="#">Sign Out</a>
+    <ul class="navbar-nav" style="padding-right: 5%;" *ngIf="loggedIn else signIn">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLink="#" data-toggle="dropdown"><i class="fa fa-user-circle-o mr-1"
+            aria-hidden="true"></i>John Doe</a>
+        <div class="dropdown-menu bg-dark-x" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="account-setting/1">My Account</a>
+          <a class="dropdown-item" href="#">Change Password</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Sign Out</a>
+        </div>
       </li>
     </ul>
 
     <ng-template #signIn>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" style="padding-right: 5%;">
         <li class="nav-item">
           <a class="nav-link" routerLink="signup">Sign Up</a>
         </li>

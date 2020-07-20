@@ -9,3 +9,17 @@ a.nav-link:hover {
 .bg-dark-x {
   background-color: #020202 !important;
 }
+
+
+a.dropdown-item{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-item:hover{
+  background-color: #313d56 !important;
+  color: #ff0000;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #a50026;
+}

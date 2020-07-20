@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
-    // terms: new FormControl('', Validators.required),
+    terms: new FormControl('', Validators.required),
   });
 
   constructor() { }
