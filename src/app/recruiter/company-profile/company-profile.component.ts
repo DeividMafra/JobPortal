@@ -13,15 +13,15 @@ export class CompanyProfileComponent implements OnInit {
     numberOfJobs: new FormControl('', Validators.required),
     website: new FormControl(''),
     postalCode: new FormControl('', Validators.required),
-  });
-
-  recruiterInfo = new FormGroup({
     recruiterName: new FormControl('', Validators.required),
     currentTitle: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     heardAboutUs: new FormControl('', Validators.required),
-    acceptTerms: new FormControl('', Validators.required),
   });
+
+  // recruiterInfo = new FormGroup({
+
+  // });
 
   public heardAboutUsSrc = ['LinkedIn', 'Facebook', 'Github', 'Instagram'];
 

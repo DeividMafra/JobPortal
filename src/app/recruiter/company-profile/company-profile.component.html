@@ -1,109 +1,93 @@
 <div class="main-content">
   <div class="container-fluid">
 
-    <div class="col-8 mx-auto my-5">
-      <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+    <div class="card col-6 mx-auto my-5">
 
-        <mat-step [stepControl]="companyInfoForm">
-          <form [formGroup]="companyInfoForm">
-            <ng-template matStepLabel>Company Information</ng-template>
+      <h2 class="header text-center mt-3">Company Profile</h2>
+      <h4 class="header ml-3 mt-5">Company Information</h4>
 
-            <div class="row mx-1 mt-5">
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput placeholder="Company name" formControlName="companyName" required>
-                </mat-form-field>
-              </div>
+      <form [formGroup]="companyInfoForm">
 
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput type="number" placeholder="Number of jobs" formControlName="numberOfJobs" required>
-                </mat-form-field>
-              </div>
-            </div>
+        <div class="row mx-1 mt-5">
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Company name" formControlName="companyName" required>
+            </mat-form-field>
+          </div>
 
-            <div class="row mx-1 mt-5">
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput placeholder="Website" formControlName="website" required>
-                </mat-form-field>
-              </div>
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput type="number" placeholder="Number of jobs" formControlName="numberOfJobs" required>
+            </mat-form-field>
+          </div>
+        </div>
 
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput placeholder="Postal code" formControlName="postalCode" required>
-                </mat-form-field>
-              </div>
-            </div>
+        <div class="row mx-1 mt-5">
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Website" formControlName="website" required>
+            </mat-form-field>
+          </div>
 
-            <div class="row mx-1 my-5 justify-content-between">
-              <div class="col-1">
-                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
-              </div>
-              <div class="col-2 float-right">
-                <button mat-button matStepperNext class="btn btn-secondary float-right">Save & Next</button>
-              </div>
-            </div>
-          </form>
-        </mat-step>
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Postal code" formControlName="postalCode" required>
+            </mat-form-field>
+          </div>
+        </div>
 
-        <mat-step [stepControl]="recruiterInfo">
-          <form [formGroup]="recruiterInfo">
-            <ng-template matStepLabel>Recruiter Information</ng-template>
+        <!-- <div class="col-2 float-right my-5">
+          <button mat-button class="btn btn-red float-right">Save</button>
+        </div>
+        <div class="col-2 float-right my-5">
+          <button mat-button class="btn btn-outline-secondary float-right">Cancel</button>
+        </div> -->
+        <!-- </form> -->
 
-            <div class="row mx-1 mt-5">
-              <div class="col-12">
-                <mat-form-field>
-                  <input matInput placeholder="Your Name" formControlName="recruiterName" required>
-                </mat-form-field>
-              </div>
-            </div>
+        <!-- <form [formGroup]="recruiterInfo"> -->
+        <h4 class="header ml-3 mt-5">Recruiter Information</h4>
 
-            <div class="row mx-1 mt-5">
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput placeholder="Current title" formControlName="currentTitle" required>
-                </mat-form-field>
-              </div>
+        <div class="row mx-1 mt-5">
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Your Name" formControlName="recruiterName" required>
+            </mat-form-field>
+          </div>
 
-              <div class="col-6">
-                <mat-form-field>
-                  <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
-                </mat-form-field>
-              </div>
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Current title" formControlName="currentTitle" required>
+            </mat-form-field>
+          </div>
+        </div>
 
-            </div>
+        <div class="row mx-1 mt-5">
+          <div class="col-6">
+            <mat-form-field>
+              <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
+            </mat-form-field>
+          </div>
 
-            <div class="row mx-1 mt-5">
-              <div class="col-6">
-                <mat-form-field>
-                  <mat-select placeholder="How did you hear about us" multiple formControlName="heardAboutUs" required>
-                    <mat-option *ngFor="let source of heardAboutUsSrc" [value]="source">
-                      {{source}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
+          <div class="col-6">
+            <mat-form-field>
+              <mat-select placeholder="How did you hear about us" multiple formControlName="heardAboutUs" required>
+                <mat-option *ngFor="let source of heardAboutUsSrc" [value]="source">
+                  {{source}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
 
-              <div class="col-6 pt-4">
-                <mat-checkbox formControlName="acceptTerms" color="primary">I've read and I agree to the <a
-                    href="#">terms and conditions</a> of ABC Portal</mat-checkbox>
-              </div>
-            </div>
+        <div class="col-2 float-right my-5">
+          <button mat-button class="btn btn-red float-right">Save</button>
+        </div>
+        <div class="col-2 float-right my-5">
+          <button mat-button class="btn btn-outline-secondary float-right">Cancel</button>
+        </div>
 
-            <div class="row mx-1 my-5 justify-content-between">
-              <div class="col-1">
-                <button mat-button matStepperPrevious class="btn btn-outline-secondary">Back</button>
-              </div>
-              <div class="col-2 float-right">
-                <button mat-button matStepperNext class="btn btn-secondary float-right">Save</button>
-              </div>
-            </div>
+      </form>
 
-          </form>
-        </mat-step>
-
-      </mat-horizontal-stepper>
     </div>
 
   </div>

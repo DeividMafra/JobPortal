@@ -14,12 +14,6 @@ export class AccountSettingsComponent implements OnInit {
     phoneNumber: new FormControl('', Validators.required),
   });
 
-  changePassword = new FormGroup({
-    currentPassword: new FormControl('', Validators.required),
-    newPassword: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required),
-  });
-
   constructor() { }
 
   ngOnInit() {

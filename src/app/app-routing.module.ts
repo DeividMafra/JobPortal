@@ -14,6 +14,7 @@ import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.comp
 import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
+import { ChangePasswordComponent } from './recruiter/account-settings/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent
   },
 ];
 

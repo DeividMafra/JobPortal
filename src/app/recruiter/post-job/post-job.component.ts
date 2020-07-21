@@ -24,8 +24,8 @@ export class PostJobComponent implements OnInit {
     jobTitle: new FormControl(''),
     category: new FormControl(''),
     type: new FormControl(''),
-    tags: new FormControl(''),
-    experience: new FormControl(''),
+    keywords: new FormControl(''),
+    location: new FormControl(''),
     description: new FormControl(''),
   });
 

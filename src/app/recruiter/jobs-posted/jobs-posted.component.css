@@ -16,7 +16,7 @@ ul{
   background-color: #ff0000;
   border-radius: 10px;
   transition: background-color 0.3s;
-  width: 75%;
+  width: 95%;
 }
 
 .btn-red:hover {
@@ -28,6 +28,7 @@ ul{
   color: #fd1616;
   background-color: #fddcd4;
   border: 1px dashed;
+  font-size: .8em;
 }
 
 .special-border-inactive {

@@ -5,6 +5,7 @@ interface PostedJob {
   jobtitle: string;
   location: string;
   isActive: boolean;
+  type: Array<string>;
   numberOfCandidate: number;
 }
 
@@ -23,6 +24,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Web Designer, Graphic Designer, UI/UX Designer",
       location: "Wellesley Road, London",
       isActive: true,
+      type: ["Full time"],
       numberOfCandidate: 9
     },
     {
@@ -30,6 +32,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Web Developer & Software Developer",
       location: "Garden Road, UK",
       isActive: false,
+      type: ["Contract"],
       numberOfCandidate: 35
     },
     {
@@ -37,6 +40,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "IT Department & Manager",
       location: "Drive Post NY 676",
       isActive: true,
+      type: ["Full time", "Contract"],
       numberOfCandidate: 10
     },
     {
@@ -44,6 +48,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Office Assistant",
       location: "Wellesley Road, London",
       isActive: false,
+      type: ["Part time"],
       numberOfCandidate: 58
     },
     {
@@ -51,6 +56,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Web Designer, Graphic Designer, UI/UX Designer",
       location: "Wellesley Road, London",
       isActive: true,
+      type: ["Full time", "Contract"],
       numberOfCandidate: 22,
     },
     {
@@ -58,6 +64,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Web Developer & Software Developer",
       location: "Garden Road, UK",
       isActive: true,
+      type: ["Full time", "Contract"],
       numberOfCandidate: 5,
     },
     {
@@ -65,6 +72,7 @@ export class JobsPostedComponent implements OnInit {
       jobtitle: "Office Assistant",
       location: "Wellesley Road, London",
       isActive: false,
+      type: ["Intern"],
       numberOfCandidate: 10,
     },
   ]

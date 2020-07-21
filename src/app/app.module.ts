@@ -38,6 +38,7 @@ import { EditJobComponent } from './recruiter/jobs-posted/edit-job/edit-job.comp
 import { AccountSettingsComponent } from './recruiter/account-settings/account-settings.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { ChangePasswordComponent } from './recruiter/account-settings/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
     AccountSettingsComponent,
     SignupComponent,
     SigninComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
