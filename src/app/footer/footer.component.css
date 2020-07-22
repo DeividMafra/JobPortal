@@ -30,6 +30,7 @@ a:hover {
   color: #ff0000;
 }
 
+/* white row underlining CONTACT US title
 .footer-area .footer-widget h3::before {
   position: absolute;
   content: '';
@@ -38,7 +39,7 @@ a:hover {
   width: 50px;
   left: 15px;
   bottom: 190px;
-}
+} */
 
 .rotate-img {
   transform: rotate(45deg);
