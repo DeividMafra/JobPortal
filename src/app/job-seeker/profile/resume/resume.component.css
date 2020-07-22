@@ -1,0 +1,17 @@
+h2, h3, h5, h6{
+  color: #001935;
+  font-weight: bold;
+}
+
+
+.li-keywords {
+  display: inline-block;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.special-border {
+  color: #707070;
+  background-color: #ffffff;
+  border: 1px dashed #ddd;
+}

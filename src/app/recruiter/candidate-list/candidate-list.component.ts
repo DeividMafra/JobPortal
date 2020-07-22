@@ -18,6 +18,8 @@ export class CandidateListComponent implements OnInit {
   public candidates: CandidateList[];
   public pageOfItems: Array<CandidateList>;
 
+  public isclicked: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -37,7 +39,7 @@ export class CandidateListComponent implements OnInit {
         id: 2,
         candidateName: "Felica Kareon",
         address: "Calgary - AB",
-        desiredJob: "PHP Developer"
+        desiredJob: "Front-end Developer"
       },
       {
         id: 3,
@@ -80,14 +82,12 @@ export class CandidateListComponent implements OnInit {
     console.log('this.candidates', this.candidates)
   }
 
-  onChangePage(pageOfItems: Array<CandidateList>) {
-    this.pageOfItems = pageOfItems;
+  showCandidateDetails = () => {
+    //TO-DO
+    console.log("candidate details");
+    this.isclicked = true;
   }
 
-  getCandidateFiltered(searchArray: CandidateSearchDTO) {
 
-    console.log(searchArray);
-    //TO-DO the filter accordingly with the JSON
-  }
 
 }

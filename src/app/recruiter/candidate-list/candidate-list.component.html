@@ -1,49 +1,51 @@
-<!-- <app-search-candidate (newSearch)="getCandidateFiltered($event)"></app-search-candidate> -->
 <div class="main-content">
   <div class="container-fluid">
-    <div class="col-8 mx-auto">
+    <div class="col-8 mx-auto py-5 ">
 
-      <div class="col-10 mx-auto py-5">
-        <h2 class="text-center">Candidates</h2>
-      </div>
-
-
-
-      <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-
+      <h2 class="text-center py-5">Candidates</h2>
 
       <div class="row">
-        <div class="card col-3 mb-4 mx-5" *ngFor="let candidate of pageOfItems">
-          <div class="row py-3">
 
-            <div class="col-7 py-2">
-              <ul class="my-auto">
+        <div class="card col-xl-7 py-5 card-list mx-auto" [ngClass]="{'card-list-clicked': isclicked}">
+
+          <div class="row ml-5" *ngFor="let candidate of candidates">
+            <div class="card card-desc col-xl-9 mb-3">
+
+              <ul class="my-auto ml-5">
+
                 <li>
-                  <h5>{{candidate.candidateName}}</h5>
+                  <div class="row mt-2">
+                    <div class="col-xl-4">
+                      <h5>{{candidate.candidateName}}</h5>
+                    </div>
+                    <div class="col-xl-6">
+                      <i class="fa fa-map-marker fa-08 ml-5 mr-2" aria-hidden="true"></i>
+                      <span>{{candidate.address}}</span>
+                    </div>
+                  </div>
                 </li>
-                <li>
-                  <i class="fa fa-map-marker fa-08 mr-2" aria-hidden="true"></i>
-                  <span>{{candidate.address}}</span>
-                </li>
+
                 <li>
                   <i class="fa fa-briefcase fa-08 mr-2" aria-hidden="true"></i>
                   <span>{{candidate.desiredJob}}</span>
                 </li>
+
               </ul>
+
             </div>
 
-            <div class="col-5 my-auto">
-              <a routerLink="/{{candidate.id}}/details" class="btn btn-sm btn-red">Candidate Details</a>
-            </div>
+            <button class="card card-btn col-xl-2 mb-3" (click)=showCandidateDetails()>
+              <span class="float-right my-auto mx-auto">Details <i class="fa fa-arrow-circle-right ml-2"
+                  aria-hidden="true"></i></span>
+            </button>
 
           </div>
         </div>
-      </div>
-      <div class="d-flex col-12 justify-content-center">
-        <jw-pagination [items]="candidates" [pageSize]=6 [maxPages]="999" (changePage)="onChangePage($event)"
-          style="cursor: pointer;">
-        </jw-pagination>
+
+        <div class="col-xl-5 card card-list" *ngIf="isclicked">
+          <app-resume></app-resume>
+        </div>
+
       </div>
     </div>
 

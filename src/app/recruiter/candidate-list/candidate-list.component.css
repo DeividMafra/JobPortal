@@ -16,8 +16,9 @@
   opacity: .02;
 }
 
-.card {
-  border: unset !important;
+h2 {
+  color: #001935;
+  font-weight: bold;
 }
 
 .btn-red {
@@ -34,22 +35,38 @@ li {
   list-style: none;
 }
 
-.special-border {
-  color: #fd1616;
-  background-color: #fddcd4;
-  border: 1px dashed;
+/* a{
+  color: black !important;
+} */
+
+.card-btn{
+  border: 0;
+  background: #f3f3f3;
+  border-radius: 0 5px 5px 0;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); */
 }
 
-.company-avatar {
+.card-btn:hover{
+  background: #eae6e6;
+}
+
+.card-desc{
+  height: 110px;
   background: #fddcd4;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
-  border-radius: 100px;
-  border: 1px dashed #fd1616;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); */
 }
 
-.company-logo {
-  width: 75%;
+.card-list{
+    height: 1000px;
+    overflow-y: scroll;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.card-list-clicked{
+  flex: 0 0 50%;
+  max-width: 50%;
 }
