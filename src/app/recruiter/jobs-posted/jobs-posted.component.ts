@@ -1,13 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface PostedJob {
-  id: number;
-  jobtitle: string;
-  location: string;
-  isActive: boolean;
-  type: Array<string>;
-  numberOfCandidate: number;
-}
+import { PostedJob } from 'src/app/models/postedJob';
 
 @Component({
   selector: 'app-jobs-posted',

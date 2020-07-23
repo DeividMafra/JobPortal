@@ -15,6 +15,7 @@ import { AccountSettingsComponent } from './recruiter/account-settings/account-s
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ChangePasswordComponent } from './recruiter/account-settings/change-password/change-password.component';
+import { RecruiterDashboardComponent } from './recruiter/recruiter-dashboard/recruiter-dashboard.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,10 @@ const routes: Routes = [
   {
     path: 'change-password',
     component: ChangePasswordComponent
+  },
+  {
+    path: 'recruiter-dashboard',
+    component: RecruiterDashboardComponent
   },
 ];
 

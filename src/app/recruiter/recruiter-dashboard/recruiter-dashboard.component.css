@@ -1,0 +1,25 @@
+.card-icon {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 10px 9px 0px 0px rgba(0, 0, 0, 0.07);
+  background-color: #fddcd4;
+
+}
+
+.card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+}
+
+.card-recent {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0px 10px 5px rgba(0, 0, 0, 0.07);
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}

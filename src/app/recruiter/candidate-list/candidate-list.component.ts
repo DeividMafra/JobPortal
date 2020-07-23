@@ -18,7 +18,7 @@ export class CandidateListComponent implements OnInit {
   public candidates: CandidateList[];
   public pageOfItems: Array<CandidateList>;
 
-  public isclicked: boolean = true;
+  public isclicked: boolean = false;
 
   constructor() { }
 

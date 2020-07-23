@@ -3,7 +3,7 @@
   background-color: #ff0000;
   border-radius: 10px;
   transition: background-color 0.3s;
-  width: 75%;
+  width: 100%;
 }
 
 .btn-red:hover {
